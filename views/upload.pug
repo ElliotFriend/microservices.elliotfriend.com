@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p Upload a file to learn more about it.
+  form(enctype='multipart/form-data' method='POST' action='/api/fileanalyze')
+    input#inputfield(type='file' name='upfile')
+    input#button(type='submit' value='Upload')
