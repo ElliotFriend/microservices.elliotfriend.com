@@ -10,10 +10,12 @@ let storage = multer.diskStorage({
 });
 let upload = multer({ storage: storage });
 
+/* GET present an upload form. */
 router.get('/', (req, res, next) => {
   res.render('upload', {title: 'Request Headers Parser'});
 });
 
+/* POST upload the file and return details about it. */
 router.post('/', upload.single('upfile'), (req, res, next) => {
   res.json({
     name: req.file.originalname,
