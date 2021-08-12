@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  form(action='/api/shorturl' method='POST')
+    fieldset
+      legend Submit a link to be shortened
+      label(for='url_input') URL:
+      input#url_input(type='text' name='url' placeholder='https://www.elliotfriend.com')
+      input(type='submit' value='POST URL')

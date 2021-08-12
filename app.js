@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var timestampRouter = require('./routes/timestamp');
 var requestHeadersRouter = require('./routes/requestHeaders');
 var fileAnalyzeRouter = require('./routes/fileAnalyze');
+var urlShortenerRouter = require('./routes/urlShortener');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use('/', indexRouter);
 app.use('/api/timestamp', timestampRouter);
 app.use('/api/whoami', requestHeadersRouter);
 app.use('/api/fileanalyze', fileAnalyzeRouter);
+app.use('/api/shorturl', urlShortenerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
